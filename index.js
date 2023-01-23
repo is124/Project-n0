@@ -20,4 +20,4 @@ app.listen(PORT, () => {
   console.log("Server running ... ");
 });
 
-// EntryFile(express index.js) --> Router ----> Controllers ----> Providers ----> Repo
+// Request journey = EntryFile (express index.js) --> Router ----> Controllers ----> Providers ----> Repo
