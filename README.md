@@ -6,3 +6,7 @@ Node.js project setup with Sequelize ORM.
 #### Setup 
 - git clone : `git@github.com:is124/template-nodejs.git`
 - run `npm i`
+
+#### Project flow
+- index.js (request entry) ---> Router ---> Controller <---> Provider <---> Repo (DB Ops) 
+- Response <--- Controller
