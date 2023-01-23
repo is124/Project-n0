@@ -1,4 +1,6 @@
-const Create = (req, res) => {
+const provider = require("./../Providers/index");
+
+const Create = async (req, res) => {
   try {
     res.send({ location: "Controllers", method: "Create" });
   } catch (err) {
@@ -6,15 +8,19 @@ const Create = (req, res) => {
   }
 };
 
-const Read = (req, res) => {
+const Read = async (req, res) => {
   try {
-    res.send({ location: "Controllers", method: "Read" });
+    const ReadPov = await provider.Read();
+
+    if (ReadPov.isSuccess) {
+      res.json({ isSuccess: 1, data: ReadPov.data });
+    }
   } catch (err) {
     console.log(err);
   }
 };
 
-const Update = (req, res) => {
+const Update = async (req, res) => {
   try {
     res.send({ location: "Controllers", method: "Update" });
   } catch (err) {
@@ -22,7 +28,7 @@ const Update = (req, res) => {
   }
 };
 
-const Delete = (req, res) => {
+const Delete = async (req, res) => {
   try {
   } catch (err) {
     res.send({ location: "Controllers", method: "Delete" });
