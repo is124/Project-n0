@@ -1,5 +1,5 @@
 const auth = (req, res, next) => {
-  if (req.headers["appkey"] != "pass123code") {
+  if (req.headers["appkey"] != "header@pwd") {
     res.send("Unauthorized").status(401);
   }
 
